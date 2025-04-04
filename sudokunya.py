@@ -24,9 +24,9 @@ class Sudoku:
 
         button_frame = tk.Frame(self.root)
         button_frame.pack(pady=10)
-        solve_button = tk.Button(button_frame, text="Решить", command=self.solve)
+        solve_button = tk.Button(button_frame, text="Решить ня", command=self.solve)
         solve_button.pack(side='left', padx=5)
-        check_button = tk.Button(button_frame, text="Проверить", command=self.check_solution)
+        check_button = tk.Button(button_frame, text="Проверить ня", command=self.check_solution)
         check_button.pack(side='left', padx=5)
 
     def generate_puzzle(self):
@@ -34,7 +34,7 @@ class Sudoku:
         self.remove_numbers()
 
     def remove_numbers(self):
-        # Удаление случайных чисел для создания пазла
+        # Удаление случайных чисел
         attempts = 5
         while attempts > 0:
             row = random.randint(0, 8)
@@ -113,9 +113,9 @@ class Sudoku:
                     messagebox.showwarning("Ошибка ня", "Заполните все поля ня!")
                     return
                 if not self.is_valid(self.board, int(self.entries[i][j].get()), (i, j)):
-                    messagebox.showerror("Ошибка", "Решение неправильное!")
+                    messagebox.showerror("Ошибка", "Решение неправильное")
                     return
-        messagebox.showinfo("Поздравляем!", "Решение правильное!")
+        messagebox.showinfo("Поздравляем ня!", "Решение правильное ня!")
 
 if __name__ == '__main__':
     root = tk.Tk()
